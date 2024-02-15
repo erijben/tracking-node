@@ -17,13 +17,7 @@ const equipSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-
-    Departement:{
-        type: String ,
-        required:false
-    },
  
-  
     Emplacement : {
         type: String,
         required: false,

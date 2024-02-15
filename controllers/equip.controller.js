@@ -22,22 +22,22 @@ module.exports = class equip {
         } catch (error) {
             res.status(500).json({ error: error });
         }
-    }
+    };
 
+
+    
     static async apiCreateequip(req, res, next) {
         try {
             const comment = {};
             comment.Nom = req.body.Nom;
             comment.Type = req.body.Type;
             comment.AdresseIp = req.body.AdresseIp;
-            comment.Departement = req.body.Departement;
             comment.Emplacement = req.body.Emplacement;
             comment.Etat = req.body.Etat;
-       
-
+    
             const updatedequip = await equipService.createequip(comment);
             res.json(updatedequip);
-
+    
         } catch (error) {
             res.status(500).json({ error: error });
         }
@@ -50,7 +50,6 @@ module.exports = class equip {
            comment.Nom = req.body.Nom;
            comment.Type = req.body.Type;
            comment.AdresseIp = req.body.AdresseIp;
-           comment.Departement = req.body.Departement;
            comment.Emplacement = req.body.Emplacement;
            comment.Etat = req.body.Etat;
            
@@ -152,4 +151,4 @@ module.exports = class equip {
             res.status(500).json({ error: error.message });
         }
     }
-};
+}

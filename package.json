@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "child_process": "^1.0.2",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "env": "^0.0.2",
     "express-validator": "^7.0.1",

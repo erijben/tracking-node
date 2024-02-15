@@ -16,7 +16,8 @@ module.exports = class UserService{
             const newUser = {
                 username: data.username,
                 email: data.email,
-                password: data.password
+                number:data.number
+               
             }
            const response = await new User(newUser).save();
            return response;
@@ -34,10 +35,10 @@ module.exports = class UserService{
         }
     }
 
-    static async updateUser(username,email,password){
+    static async updateUser(username,email,number){
         try {
             const updateResponse =  await User.updateOne(
-                {username,email,password}, 
+                {username,email,number}, 
                 );
 
                 return updateResponse;

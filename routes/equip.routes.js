@@ -4,7 +4,10 @@ const equipCtrl = require("../controllers/equip.controller");
 
 
 router.get("/", equipCtrl.apiGetAllequips);
-router.post("/", equipCtrl.apiCreateequip);
+router.post("/add", (req, res) => {
+  console.log("POST request to add");
+  equipCtrl.apiCreateequip(req, res);});
+   
 router.get("/equip/:id", equipCtrl.apiGetequipById);
 router.put("/equip/:id", equipCtrl.apiUpdateequip);
 router.delete("/equip/:id", equipCtrl.apiDeleteequip);

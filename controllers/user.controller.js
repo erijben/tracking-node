@@ -26,27 +26,29 @@ module.exports = class User{
    }
 
    static async apiCreateUser(req, res, next) {
-    try {
-        const { username, email, password } = req.body;
-
-        // Check if required fields are present
-        if (!username || !email || !password) {
-            return res.status(400).json({ error: "Missing required fields." });
-        }
-
-        const createdUser = await UserService.createUser({ username, email, password });
-        res.json(createdUser);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-}
-
+      try {
+          const { username, email, number } = req.body;
+  
+          // Check if required fields are present
+          if (!username || !email || !number) {
+              return res.status(400).json({ error: "Missing required fields." });
+          }
+  
+          const createdUser = await UserService.createUser({ username, email, number});
+          console.log("User created:", createdUser); // Ajoutez cette ligne
+  
+          res.json(createdUser);
+      } catch (error) {
+          console.error('Error creating user:', error); // Ajoutez cette ligne
+          res.status(500).json({ error: error.message });
+      }
+  }
    static async apiUpdateUser(req, res, next){
       try {
          const comment = {}
          comment.username     = req.body.username;
          comment.email        = req.body.email;
-         comment.password     = req.body.password
+         comment.number  = req.body.number
 
          const updatedUser = await UserService.updateUser(comment);
 

@@ -21,7 +21,7 @@
         }
       }
     },
-    "/equip.routes/": {
+    "/equip/": {
       "get": {
         "description": "",
         "responses": {
@@ -35,49 +35,19 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/equip/add": {
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Nom": {
-                  "example": "any"
-                },
-                "Type": {
-                  "example": "any"
-                },
-                "AdresseIp": {
-                  "example": "any"
-                },
-                "Departement": {
-                  "example": "any"
-                },
-                "Emplacement": {
-                  "example": "any"
-                },
-                "Etat": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
     },
-    "/equip.routes/equip/{id}": {
+    "/equip/equip/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -163,7 +133,7 @@
         }
       }
     },
-    "/equip.routes/equip/{id}/config": {
+    "/equip/equip/{id}/config": {
       "put": {
         "description": "",
         "parameters": [
@@ -196,7 +166,7 @@
         }
       }
     },
-    "/equip.routes/equip/{id}/scheduleAutoPings": {
+    "/equip/equip/{id}/scheduleAutoPings": {
       "post": {
         "description": "",
         "parameters": [
@@ -220,7 +190,7 @@
         }
       }
     },
-    "/equip.routes/equip/{id}/pingHistory": {
+    "/equip/equip/{id}/pingHistory": {
       "get": {
         "description": "",
         "parameters": [
@@ -241,7 +211,7 @@
         }
       }
     },
-    "/equip.routes/equip/{id}/collectSNMPData": {
+    "/equip/equip/{id}/collectSNMPData": {
       "get": {
         "description": "",
         "parameters": [
@@ -265,7 +235,7 @@
         }
       }
     },
-    "/equip.routes/equip/alerts": {
+    "/equip/equip/alerts": {
       "get": {
         "description": "",
         "responses": {
@@ -278,7 +248,7 @@
         }
       }
     },
-    "/user.routes/users": {
+    "/user/users": {
       "get": {
         "description": "",
         "responses": {
@@ -328,7 +298,7 @@
         }
       }
     },
-    "/user.routes/users/{id}": {
+    "/user/users/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -405,7 +375,7 @@
         }
       }
     },
-    "/auth.routes/signup": {
+    "/auth/signup": {
       "post": {
         "description": "",
         "parameters": [
@@ -444,7 +414,7 @@
         }
       }
     },
-    "/auth.routes/login": {
+    "/auth/login": {
       "post": {
         "description": "",
         "parameters": [
@@ -477,7 +447,7 @@
         }
       }
     },
-    "/auth.routes/all": {
+    "/auth/all": {
       "get": {
         "description": "",
         "responses": {

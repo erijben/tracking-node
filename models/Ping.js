@@ -1,30 +1,25 @@
+
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 
-
-const PingSchema = new mongoose.Schema({
-
-    title:{
-        type: String,
-        required: true,
+const pingResult = new Schema({
+    size: {
+      type: Number,
+      required: true,
     },
-
-    body:{
-        type: String,
-        required: true,
+    temps: {
+      type: Number,
+      required: true,
     },
-
-    Ping_image: {
-        type: String,
-        required: false,
+    TTL: {
+      type: Number,
+      required: true,
     },
-
-    date:{
-        type: Date,
-        default: Date.now(),
-        required:false
-    }
-
+    timestamp: {
+      type: Date,
+      required: true,
+    },
 });
-
-module.exports = mongoose.model("Ping", PingSchema);
+// ping.js
+module.exports = mongoose.model("PingResult", pingResult);

@@ -19,7 +19,6 @@ module.exports = class equipService {
                 Nom :data.Nom,
                 Type :data.Type,
                 AdresseIp : data.AdresseIp,
-                Departement : data.Departement,
                 Emplacement :data.Emplacement,
                 Etat :data.Etat,
 
@@ -72,10 +71,10 @@ module.exports = class equipService {
         }
     }
 
-    static async updateequip(Nom, Type , AdresseIp , Departement  , Emplacement, Etat) {
+    static async updateequip(Nom, Type , AdresseIp , Emplacement, Etat) {
         try {
             const updateResponse = await equip.updateOne(
-                {Nom, Type , AdresseIp , Departement ,Emplacement, Etat}, 
+                {Nom, Type , AdresseIp , Emplacement, Etat}, 
                 
             );
             return updateResponse;
